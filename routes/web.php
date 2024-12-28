@@ -9,9 +9,9 @@ Route::post('logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/register', [UserController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [UserController::class, 'register']);
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');});
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('/dashboard');});
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('/dashboard');
 });
 
 
